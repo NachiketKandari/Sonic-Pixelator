@@ -25,8 +25,9 @@ Sonic Pixelator utilizes advanced steganography and data visualization technique
 
 - **Interactive Vinyl Physics:** When an audio file is decoded, it is "loaded" onto a virtual vinyl record. The player features a functioning tonearm and allows for manual "scrubbing" (vinyl scratching) to seek through the audio.
 - **CRT Aesthetics:** The UI is inspired by 1980s rack-mounted signal processors, complete with scanlines, glowing LEDs, and chunky industrial buttons.
+- **Python CLI Support:** A standalone Python version is included for automated workflows and terminal-based encoding/decoding.
 
-## Run Locally
+## Run Locally (Web)
 
 **Prerequisites:** Node.js
 
@@ -40,6 +41,32 @@ Sonic Pixelator utilizes advanced steganography and data visualization technique
 
     ```bash
     npm run dev
+    ```
+
+## Run Locally (Python CLI)
+
+**Prerequisites:** Python 3.8+
+
+1. **Install dependencies:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. **Encode audio into an image:**
+
+    ```bash
+    # Stego Mode (with cover image)
+    python sonic_pixelator.py encode --audio song.mp3 --cover photo.jpg --out secret.png
+    
+    # Noise Mode (direct visualization)
+    python sonic_pixelator.py encode --audio song.mp3 --out noise.png
+    ```
+
+3. **Decode audio from an image:**
+
+    ```bash
+    python sonic_pixelator.py decode secret.png
     ```
 
 ## Vercel Deployment
